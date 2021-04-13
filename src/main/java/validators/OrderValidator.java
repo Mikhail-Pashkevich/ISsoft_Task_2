@@ -1,6 +1,6 @@
-package services;
+package validators;
 
-import entities.Order;
+import entities.order.Order;
 
 public class OrderValidator {
     public static boolean isValidOrder(Order order) {

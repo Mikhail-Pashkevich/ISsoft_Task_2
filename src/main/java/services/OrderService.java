@@ -1,35 +1,30 @@
 package services;
 
-import entities.Order;
+import entities.order.Order;
+import storages.OrderStorage;
 
-import java.util.List;
-
-import static services.OrderValidator.isValidOrder;
+import static validators.OrderValidator.isValidOrder;
 
 public class OrderService {
-    private OrderStorage orderStorage = OrderStorage.emptyStorage();
+    private OrderStorage orderStorage;
 
-    public String orderToStringForWrite(Order order) {
-        throw new UnsupportedOperationException("not implemented yet");
+    public OrderService(OrderStorage orderStorage) {
+        this.orderStorage = orderStorage;
     }
 
-    public String read(String path) {
-        throw new UnsupportedOperationException("not implemented yet");
-    }
-
-    public boolean write(String path) {
-        throw new UnsupportedOperationException("not implemented yet");
+    public void someLogic() {
+        throw new UnsupportedOperationException("do some logic later");
     }
 
     public boolean placeOrder(Order order) {
         if (isValidOrder(order)) {
-            orderStorage.addOrder(order);
+            orderStorage.add(order);
             return true;
         }
         return false;
     }
 
-    public List<Order> findByOrderId(int orderId) {
+    public Order findByOrderId(int orderId) {
         return orderStorage.findByOrderId(orderId);
     }
 }

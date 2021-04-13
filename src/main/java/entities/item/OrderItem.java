@@ -1,4 +1,4 @@
-package entities;
+package entities.item;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -6,10 +6,10 @@ import lombok.Getter;
 @Getter
 @EqualsAndHashCode
 public class OrderItem {
-    private int id;
-    private String name;
-    private int quantity;
-    private double cost;
+    private final int id;
+    private final String name;
+    private final int quantity;
+    private final double cost;
 
     public OrderItem(int id, String name, int quantity, double cost) {
         this.id = id;
